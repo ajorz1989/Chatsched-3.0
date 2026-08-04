@@ -1,0 +1,34 @@
+name: CI
+
+# Didn't exist before this pass — nothing was verifying the app still
+# builds on every push. This runs the same checks used while building
+# this pass: type-check + build, then the test suite.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type-check and build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Lint
+        run: npm run lint
+        continue-on-error: true # oxlint isn't enforced yet — report, don't block, until the codebase is deliberately brought in line with it
