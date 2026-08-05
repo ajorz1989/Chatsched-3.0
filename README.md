@@ -1,1 +1,1 @@
-Update App to initialize auth listener and wrap routes with ProtectedRoute
+Wire CreateCampaign to use the AI matching mutation hook
