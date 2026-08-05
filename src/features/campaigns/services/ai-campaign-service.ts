@@ -1,6 +1,6 @@
 import { supabase } from '../../../lib/supabase/client';
 
-interface MatchRequest {
+export interface MatchRequest {
   campaignId?: string;
   userId: string;
   businessDescription: string;
@@ -9,7 +9,7 @@ interface MatchRequest {
   niche: string;
 }
 
-interface MatchResponse {
+export interface MatchResponse {
   success: boolean;
   jobId: string;
   data: {
