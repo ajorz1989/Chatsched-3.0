@@ -83,13 +83,12 @@ export default function Header() {
             </Link>
           )}
 
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-[3px] border-billboard-greenDeep bg-billboard-green text-white font-bold text-sm px-4 py-2.5 rounded hover:bg-billboard-greenDeep transition hover:-translate-x-0.5 hover:-translate-y-0.5"
+          <Link
+            to="/signup"
+            className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700 hover:shadow-md dark:bg-blue-500 dark:hover:bg-blue-600"
           >
-            WhatsApp us
-          </a>
+            Get Started
+          </Link>
         </div>
       </div>
     </header>
